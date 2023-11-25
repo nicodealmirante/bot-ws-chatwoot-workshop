@@ -17,12 +17,6 @@ const flowPrincipal = addKeyword('hola')
 
 const serverHttp = new ServerHttp(PORT)
 
-const chatwoot = new ChatwootClass({
-    account: process.env.CHATWOOT_ACCOUNT_ID,
-    token: process.env.CHATWOOT_TOKEN,
-    endpoint: process.env.CHATWOOT_ENDPOINT
-})
-
 const queue = new Queue({
     concurrent: 1,
     interval: 500
