@@ -7,7 +7,6 @@ const MetaProvider = require('@bot-whatsapp/provider/meta')
 const { downloadMediaMessage } = require('@whiskeysockets/baileys');
 const MockAdapter = require('@bot-whatsapp/database/mock')
 const ServerHttp = require('./src/http')
-const ChatwootClass = require('./src/chatwoot/chatwoot.class')
 const { handlerMessage } = require('./src/chatwoot')
 
 const PORT = process.env.PORT ?? 3001
