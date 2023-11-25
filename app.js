@@ -3,7 +3,7 @@ const { createBot, createProvider, createFlow, addKeyword } = require('@bot-what
 const Queue = require('queue-promise')
 const mimeType = require('mime-types')
 const fs = require('node:fs/promises');
-const BaileysProvider = require('@bot-whatsapp/provider/baileys')
+const MetaProvider = require('@bot-whatsapp/provider/meta')
 const { downloadMediaMessage } = require('@whiskeysockets/baileys');
 const MockAdapter = require('@bot-whatsapp/database/mock')
 const ServerHttp = require('./src/http')
@@ -32,7 +32,11 @@ const queue = new Queue({
 const main = async () => {
     const adapterDB = new MockAdapter()
     const adapterFlow = createFlow([flowPrincipal])
-    const adapterProvider = createProvider(BaileysProvider)
+    const adapterProvider = createProvider(MetaProvider, {
+        jwtToken: 'EAAMziR3dWTwBOyI5iwUFZCeBqo2F3yZCvipXQlqUxlvtQkb122Sc91lLMJvZC72DobxvZBwO4lXWIdJ4FCTMISIqfpEPtxbWC9zkeffcbBU7W2Dn9cefzdRNDQEmdma9nxsmz6WfFKsK9Es7RwuZAteGov0mIZA0WPlusxgmmJNpcydS37cmjNa558ETrgfbIkQJJaba4Cv5ZCu8GZAe',
+        numberId: '133862353148114',
+        verifyToken: 'asdasd',
+        version: 'v18.0'})
 
     const bot = await createBot({
         flow: adapterFlow,
