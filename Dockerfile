@@ -1,4 +1,5 @@
 FROM node:18-bullseye as bot
+EXPOSE 3000-3005
 WORKDIR /app
 COPY package*.json ./
 RUN npm i
