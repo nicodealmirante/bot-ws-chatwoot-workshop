@@ -56,7 +56,7 @@ class ServerHttp {
             const checkIfMessage = body?.private == false && body?.event == "message_created" && body?.message_type === "outgoing" && body?.conversation?.channel.includes("Channel::Api")
             if (checkIfMessage) {
                 const phone = body.conversation?.meta?.sender?.phone_number.replace('+', '')
-                const content = body?.content ?? '';
+                const content = body?.content ?? 'asdasd';
 
                 const file = attachments?.length ? attachments[0] : null;
                 if (file) {
@@ -110,7 +110,7 @@ class ServerHttp {
             next()
         })
 
-        this.app.post(`/chatwoot`, this.chatwootCtrl)
+        this.app.get(`/chatwoot`, this.chatwootCtrl)
      
 
         this.app.listen(3003, () => {
