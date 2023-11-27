@@ -113,7 +113,7 @@ class ServerHttp {
         this.app.get(`/chatwoot`, this.chatwootCtrl)
      
 
-        this.app.listen(3003, () => {
+        this.app.listen(this.port, () => {
             console.log(``)
             console.log(`🦮 http://localhost:${this.port}/scan-qr`)
             console.log(``)
